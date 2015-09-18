@@ -19,6 +19,8 @@
 
 if [ ! -z "$1" ] && [ -s "$GOPATH/src/github.com/$1" ]; then
   cd "$GOPATH/src/github.com/$1"
-else
+elif [ ! -z "$1" ] && [ -s "$PROJECTS/$1" ]; then
   cd "$PROJECTS/$1"
+else
+  cd "$LOCALPROJECTS/$1"
 fi
